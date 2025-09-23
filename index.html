@@ -329,30 +329,30 @@
 
     <div class="worlds-grid">
       <div class="world-card" onclick="navigateToWorld('cooper-station')">
-        <img src="/cooper_station_preview.webp" alt="Cooper Station Preview" class="world-preview" loading="lazy">
+        <img id="cooper-preview" alt="Cooper Station Preview" class="world-preview" loading="lazy">
         <h2 class="world-title">Cooper Station</h2>
       </div>
 
       <div class="world-card" onclick="navigateToWorld('underground')">
-        <img src="/underground.webp" alt="Underground World Preview" class="world-preview" loading="lazy">
+        <img id="underground-preview" alt="Underground World Preview" class="world-preview" loading="lazy">
         <h2 class="world-title">Underground</h2>
       </div>
 
       <div class="world-card" onclick="navigateToWorld('mountain')">
-        <img src="/valley_preview.webp" alt="Mountain World Preview" class="world-preview" loading="lazy">
+        <img id="mountain-preview" alt="Mountain World Preview" class="world-preview" loading="lazy">
         <h2 class="world-title">Mountain World</h2>
       </div>
 
       <div class="world-card" onclick="navigateToWorld('ancient')">
-        <img src="/ancient_preview.webp" alt="Ancient World Preview" class="world-preview" loading="lazy">
+        <img id="ancient-preview" alt="Ancient World Preview" class="world-preview" loading="lazy">
         <h2 class="world-title">Ancient World</h2>
       </div>
       <div class="world-card" onclick="navigateToWorld('rome')">
-        <img src="/rome_preview.webp" alt="Rome Preview" class="world-preview" loading="lazy">
+        <img id="rome-preview" alt="Rome Preview" class="world-preview" loading="lazy">
         <h2 class="world-title">Rome</h2>
       </div>
       <div class="world-card" onclick="navigateToWorld('temple')">
-        <img src="/temple_preview.webp" alt="Temple Preview" class="world-preview" loading="lazy">
+        <img id="temple-preview" alt="Temple Preview" class="world-preview" loading="lazy">
         <h2 class="world-title">Temple</h2>
       </div>
     </div>
@@ -383,7 +383,7 @@
               window.location.href = 'cooper-station.html';
               break;
             case 'underground':
-              window.location.href = 'underground.html';
+              window.location.href = 'dis1.html';
               break;
             case 'mountain':
               window.location.href = 'mountain.html';
@@ -404,8 +404,34 @@
         }, 500);
       }
 
+      // R2 bucket URL - matching the environment variable
+      const R2_BUCKET_URL = 'https://pub-c101b1fa435b44a9a86cef9c78085b4f.r2.dev/public';
+
+      // Image URLs for preview cards
+      const IMAGE_URLS = {
+        COOPER_STATION_PREVIEW: `${R2_BUCKET_URL}/cooper_station_preview.webp`,
+        UNDERGROUND_PREVIEW: `${R2_BUCKET_URL}/underground.webp`,
+        VALLEY_PREVIEW: `${R2_BUCKET_URL}/valley_preview.webp`,
+        ANCIENT_PREVIEW: `${R2_BUCKET_URL}/ancient_preview.webp`,
+        ROME_PREVIEW: `${R2_BUCKET_URL}/rome_preview.webp`,
+        TEMPLE_PREVIEW: `${R2_BUCKET_URL}/temple_preview.webp`
+      };
+
+      // Set image URLs
+      function loadImageUrls() {
+        document.getElementById('cooper-preview').src = IMAGE_URLS.COOPER_STATION_PREVIEW;
+        document.getElementById('underground-preview').src = IMAGE_URLS.UNDERGROUND_PREVIEW;
+        document.getElementById('mountain-preview').src = IMAGE_URLS.VALLEY_PREVIEW;
+        document.getElementById('ancient-preview').src = IMAGE_URLS.ANCIENT_PREVIEW;
+        document.getElementById('rome-preview').src = IMAGE_URLS.ROME_PREVIEW;
+        document.getElementById('temple-preview').src = IMAGE_URLS.TEMPLE_PREVIEW;
+      }
+
       // Add some interactive effects
       document.addEventListener('DOMContentLoaded', function() {
+        // Load images first
+        loadImageUrls();
+
         const cards = document.querySelectorAll('.world-card');
 
         cards.forEach(card => {

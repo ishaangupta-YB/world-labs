@@ -18,7 +18,7 @@
 
 import * as RAPIER from "@dimforge/rapier3d-compat";
 import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
-import { getAssetUrl } from "./config.js";
+import { getAssetUrl, ASSETS } from "./config.js";
 import * as THREE from "three";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 
@@ -41,7 +41,7 @@ const CONFIG = {
 
 	// Assets - Using rome.spz
 	ENVIRONMENT: {
-		SPLATS: getAssetUrl("rome.spz"),
+		SPLATS: getAssetUrl(ASSETS.MODELS.ROME),
 		SPLAT_SCALE: 3,
 	},
 };

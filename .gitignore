@@ -1,8 +1,12 @@
 node_modules/
 /dist/
-.DS_Store 
+.DS_Store
 public_extra/
 
+# Environment variables
+.env
+.env.local
+.env.production
 
 public
 LICENSE
@@ -12,3 +16,4 @@ COMPLETE_GUIDE.md
 DEPLOYMENT.md
 ULTIMATE_GUIDE.md
 .cursor
+dist.zip
