@@ -1,0 +1,22 @@
+{
+  "name": "world-models-by-ishaan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "pages:dev": "wrangler pages dev dist"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.12.0",
+    "@sparkjsdev/spark": "^0.1.2",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0",
+    "wrangler": "^3.0.0"
+  }
+}

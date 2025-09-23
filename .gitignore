@@ -1,0 +1,14 @@
+node_modules/
+/dist/
+.DS_Store 
+public_extra/
+
+
+public
+LICENSE
+.vscode
+COMPLETE_GUIDE.md
+# CLAUDE.md
+DEPLOYMENT.md
+ULTIMATE_GUIDE.md
+.cursor
