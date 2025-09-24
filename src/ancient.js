@@ -141,7 +141,7 @@ async function init() {
 			),
 		);
 		await Promise.race([initPromise, timeoutPromise]);
-		console.log("✓ Rapier physics initialized");
+		// console.log("✓ Rapier physics initialized");
 	} catch (error) {
 		console.error("Failed to initialize Rapier:", error);
 		// Continue without physics - the demo will still show the environment
@@ -166,10 +166,10 @@ async function init() {
 
 	// Spark renderer for splats (explicit), enable 32-bit sorting
 	const sparkRenderer = new SparkRenderer({ renderer });
-	console.log("created spark renderer");
+	// console.log("created spark renderer");
 	// Set sort32 on the default SparkViewpoint (per Spark docs), and enable radial sorting
 	if (sparkRenderer.defaultView) {
-		console.log("setting sort32");
+		// console.log("setting sort32");
 		sparkRenderer.defaultView.sort32 = true;
 		sparkRenderer.defaultView.sortRadial = true;
 	}
@@ -259,7 +259,7 @@ async function init() {
 	splatMesh = new SplatMesh({
 		url: CONFIG.ENVIRONMENT.SPLATS,
 		onLoad: () => {
-			console.log(`✓ Ancient Gaussian splats loaded (${splatMesh.numSplats} splats)`);
+			// console.log(`✓ Ancient Gaussian splats loaded (${splatMesh.numSplats} splats)`);
 
 			splatsLoaded = true;
 			if (environment) environment.visible = false; // Hide collision mesh
@@ -317,9 +317,9 @@ async function init() {
 				const pitch = Math.asin(THREE.MathUtils.clamp(forward.y, -1, 1)) * 180 / Math.PI;
 				const rot = playerBody.rotation?.();
 				const rotStr = rot ? `quat=(${rot.x.toFixed(3)}, ${rot.y.toFixed(3)}, ${rot.z.toFixed(3)}, ${rot.w.toFixed(3)})` : "";
-				console.log(`[Player] ${posStr}  yaw=${yaw.toFixed(1)}°  pitch=${pitch.toFixed(1)}°  ${rotStr}`);
+				// console.log(`[Player] ${posStr}  yaw=${yaw.toFixed(1)}°  pitch=${pitch.toFixed(1)}°  ${rotStr}`);
 			} else {
-				console.log("[Player] body not initialized yet");
+				// console.log("[Player] body not initialized yet");
 			}
 		}
 	});
@@ -479,7 +479,7 @@ async function init() {
 
 	// Start the animation loop
 	animate(previousTime);
-	console.log("🚀 Ancient world initialized successfully!");
+	// console.log("🚀 Ancient world initialized successfully!");
 }
 
 // Initialize the application
